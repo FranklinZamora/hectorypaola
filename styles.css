@@ -1,0 +1,714 @@
+/* ANIMACIONES SCROLL */
+.animate {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    transition: opacity 0.8s cubic-bezier(.4,.2,.2,1), transform 0.8s cubic-bezier(.4,.2,.2,1);
+    will-change: opacity, transform;
+}
+.animate.visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* Variantes extra */
+.fade-in {
+    opacity: 0;
+    transform: none;
+    transition: opacity 0.8s cubic-bezier(.4,.2,.2,1);
+}
+.fade-in.visible {
+    opacity: 1;
+}
+.slide-up {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.8s, transform 0.8s;
+}
+.slide-up.visible {
+    opacity: 1;
+    transform: none;
+}
+.zoom-in {
+    opacity: 0;
+    transform: scale(0.92);
+    transition: opacity 0.8s, transform 0.8s;
+}
+.zoom-in.visible {
+    opacity: 1;
+    transform: none;
+}
+/* CARROUSEL */
+.carousel-section {
+  padding: 40px 0 60px;
+}
+
+.carousel {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+.carousel-track img {
+  width: 100vw;
+  height: auto;
+  flex-shrink: 0;
+  object-fit: cover;
+  display: block;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0);
+  color: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-btn i {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.carousel-btn.prev {
+  left: 12px;
+}
+
+.carousel-btn.next {
+  right: 12px;
+}
+
+
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+/* Ajuste desktop */
+@media (min-width: 768px) {
+  .carousel-track img {
+    height: 380px;
+  }
+}
+
+
+
+/* NO NIÑOS SECTION */
+.no-ninos-section {
+    margin: 60px 0 40px 0;
+    text-align: center;
+}
+
+.no-ninos-texto {
+    font-family: 'Aboreto', 'Playfair Display', serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    color: #111;
+    margin-bottom: 48px;
+    max-width: 1100px;
+    margin: 0 48px 48px 48px;
+}
+
+.no-ninos-grande {
+    font-family: 'Aboreto', 'Playfair Display', serif;
+    font-size: 1.8rem;
+    letter-spacing: 0.01em;
+    color: #111;
+    margin-top: 24px;
+}
+
+/* REGALO SECTION */
+.regalo-section {
+    text-align: center;
+    padding: 48px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.regalo-titulo {
+    font-family: 'Edensor', 'Playfair Display', serif;
+    font-size: 1.9rem;
+    letter-spacing: 3px;
+    color: #222;
+    margin-bottom: 14px;
+    margin-top: 30px;
+    line-height: 1.05;
+    text-transform: uppercase;
+}
+
+.regalo-texto {
+    font-family: 'Aboreto', 'Playfair Display', serif;
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+    color: #3d2b1f;
+    margin: 10px 10px 10px 10px;
+    margin-bottom: 40px;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.regalo-icono {
+    width: 52px;
+    height: auto;
+    display: inline-block;
+    margin-top: 6px;
+}
+
+.logoend-icono {
+    width: 120px;
+    height: auto;
+    display: inline-block;
+    margin-top: 6px;
+}
+
+/* GRACIAS + CONTADOR */
+.gracias-section {
+    width: 100%;
+    background: #000;
+    color: #fff;
+    padding: 40px 18px 60px 18px;
+    display: flex;
+    justify-content: center;
+}
+.gracias-inner {
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+}
+.gracias-titulo {
+    font-family: 'Aboreto', serif;
+    font-size: 0.9rem !important;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 40px 40px 40px 40px;
+}
+.gracias-subtitulo {
+    font-family: 'Aboreto', serif;
+    color: #fff;
+    letter-spacing: 2px;
+    margin-bottom: 28px;
+}
+.gracias-counts {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+/* Centrar con base en los números: anchura fija por columna */
+.gracias-count {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 96px; /* ancho fijo para alinear por el número */
+    min-width: 72px;
+}
+.gracias-number {
+    font-family: 'Edensor', serif;
+    font-size: 1.8rem;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+}
+.gracias-label {
+    font-family: 'Aboreto', serif;
+    font-size: 0.7rem;
+    color: #fff;
+    margin-top: -15px;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .gracias-number { font-size: 2.2rem; }
+    .gracias-titulo { font-size: 2rem; }
+}
+
+@media (max-width: 520px) {
+    .gracias-count { width: 64px; gap: 18px; }
+    .gracias-number { font-size: 1.5rem; }
+    .gracias-titulo { font-size: 1.2rem; }
+}
+
+/* CONFIRMACIÓN DE ASISTENCIA */
+.confirmacion-section {
+    max-width: 900px;
+    width: 100%;
+    padding: 44px 20px 56px 20px;
+    text-align: center;
+}
+.confirmacion-titulo {
+    font-family: 'Aboreto', 'Playfair Display', serif;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    color: #3d2b1f;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+.confirmacion-texto {
+    font-family: 'Aboreto', serif;
+    color: #3d2b1f;
+    margin: 20px 30px 30px 50px;
+    line-height: 1.4;
+    font-size: 1rem;
+}
+.confirmacion-boton {
+    display: inline-block;
+    background: #b7a47a;
+    color: #fff;
+    font-family: 'Aboreto', serif;
+    font-size: 0.95rem;
+    padding: 12px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background 0.18s, transform 0.12s;
+    margin-bottom: 110px;
+}
+.confirmacion-boton:hover { background: #a08c5a; transform: translateY(-2px); }
+.confirmacion-boton.confirmed { background: #8f7b4a; cursor: default; pointer-events: none; transform: none; }
+.confirmacion-mensaje {
+    margin-top: 12px;
+    font-family: 'Aboreto', serif;
+    color: #3d2b1f;
+    font-size: 1rem;
+}
+
+
+/* TÍTULO CELEBRACIÓN */
+.celebracion-titulo {
+    font-family: 'Edensor', serif;
+    font-size: 2.2rem;
+    color: #222;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    margin-top: 0;
+    text-align: center;
+}
+
+
+
+.celebracion-linea {
+    width: 90vw;
+    height: 2px;
+    background: #b7a47a;
+    margin: 0 auto 24px auto;
+    opacity: 0.6;
+}
+/* SECCIÓN VESTIMENTA */
+.vestimenta-section {
+    background: #f9f6f2;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    margin: 48px auto 48px auto;
+    padding: 38px 18px 32px 18px;
+    max-width: 400px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.vestimenta-titulo {
+    font-family: 'Aboreto', serif;
+    font-size: 1rem;
+    color: #3d2b1f;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+    margin-top: 40px;
+}
+.vestimenta-etiqueta {
+    font-family: 'Aboreto', serif;
+    font-size: 1rem;
+    color: #3d2b1f;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+}
+.vestimenta-img {
+    width: 120px;
+    margin: 18px 0 28px 0;
+    display: block;
+}
+.vestimenta-hombres, .vestimenta-mujeres {
+    font-family: 'Aboreto', serif;
+    font-size: 1.05rem;
+    color: #3d2b1f;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    margin: 0 10px 20px;
+}
+.vestimenta-mujeres {
+    margin-bottom: 48px;
+}
+/* CONTENEDOR GENERAL BLANCO PARA SECCIONES */
+.fondo-blanco {
+    background: #f9f6f2;
+    width: 100vw;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+}
+/* SECCIÓN CEREMONIA */
+.ceremonia-section {
+    background: #f9f6f2;
+    margin-top: 50px;
+    max-width: 100vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ceremonia-icono {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 18px;
+    display: block;
+    margin-top: 40px;
+}
+.recepcion-icono {
+    width: 100px;
+    margin-bottom: 18px;
+    display: block;
+}
+.ceremonia-titulo {
+    font-family: 'Edensor', 'Aboreto', serif;
+    font-size: 2rem;
+    color: #222;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+    font-weight: 50;
+}
+.ceremonia-lugar {
+    font-family: 'Aboreto', serif;
+    font-size: 1.1rem;
+    color: #3d2b1f;
+    margin-bottom: 8px;
+    letter-spacing: 1.5px;
+}
+.ceremonia-hora {
+    font-family: 'Aboreto', serif;
+    font-size: 1.05rem;
+    color: #3d2b1f;
+    margin-bottom: 22px;
+    letter-spacing: 1.2px;
+}
+.ceremonia-boton {
+    display: inline-block;
+    background: #b7a47a;
+    color: #fff;
+    font-family: 'Aboreto', serif;
+    font-size: 0.8rem;
+    padding: 12px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    transition: background 0.2s, transform 0.2s;
+    margin-bottom: 60px;
+}
+.ceremonia-boton:hover {
+    background: #a08c5a;
+    transform: scale(1.04);
+}
+
+/* FOTO PAREJA2 */
+.foto-pareja-container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.foto-pareja2 {
+    max-width: 100vw;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+    object-fit: cover;
+    display: block;
+}
+
+
+/* SECCIÓN PADRES  y PADRINOS*/
+.padres-section {
+    background: #fff;
+    padding: 38px 18px 32px 18px;
+    text-align: center;
+    
+}
+.padres-titulo {
+    font-family: 'Edensor', 'Aboreto', serif;
+    font-size: 2rem;
+    margin-bottom: 28px;
+    margin-top: 50px;
+    color: #3d2b1f;
+    font-weight: normal;
+}
+.padres-nombres {
+    font-family: 'Aboreto', serif;
+    font-size: 1.15rem;
+    color: #3d2b1f;
+    letter-spacing: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+.padrinos-nombres {
+    font-family: 'Aboreto', serif;
+    font-size: 1.15rem;
+    color: #3d2b1f;
+    letter-spacing: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 45px;
+}
+/* FOTO PAREJA */
+.foto-pareja-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 32px 0 0 0;
+}
+.foto-pareja {
+    margin-top: 50px;
+    max-width: 100vw;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+    object-fit: cover;
+    display: block;
+}
+/* Separador de fecha */
+.fecha-separador {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    padding: 40px 0 0 0;
+}
+
+.fecha-img {
+    width: 340px;
+    max-width: 100vw;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 2px 8px #0006);
+}
+@font-face {
+    font-family: 'Edensor';
+    src: url('fonts/Edensor-FREE.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+/* Sección Enlace Matrimonial */
+.enlace-section {
+    width: 100vw;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 0 0 0;
+}
+
+.enlace-titulos {
+    color: #fff;
+    text-align: center;
+    font-family: 'Aboreto', 'Times New Roman', Times, serif;
+}
+
+.enlace-nuestro {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    font-weight: 10;
+    font-family: 'Edensor', 'Aboreto', 'Times New Roman', Times, serif;
+}
+
+.enlace-matrimonial {
+    font-size: 2.5rem;
+    font-weight: 100;
+    letter-spacing: 1.5px;
+    line-height: 1.1;
+    margin-bottom: 18px;
+    font-family: 'Edensor', 'Aboreto', 'Times New Roman', Times, serif;
+}
+
+.enlace-dia {
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
+    margin-top: 10px;
+    font-weight: 300;
+}
+/* Separador de rosas */
+.rosas-separador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    margin-top: -24px;
+}
+
+.rosas-img {
+    align-items: center;
+    width: 30vh;
+    max-width: 80vw;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 2px 8px #0006);
+}
+
+.rosas2-img {
+    width: 20vh;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* centrar horizontalmente */
+    filter: drop-shadow(0 2px 8px #0006);
+}
+/* Logo PH antes del mensaje */
+/* LOGO PH antes del mensaje */
+.logo1-container {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    padding: 32px 0 0 0;
+    margin-bottom: -60px;
+    margin-top: -30px;
+    position: relative;
+    z-index: 20;
+}
+
+.logo1-img {
+    width: 120px;
+    max-width: 30vw;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 2px 8px #000a);
+    position: relative;
+    z-index: 21;
+}
+/* Ocultar scroll en todos los navegadores */
+html, body {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE y Edge */
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari y Opera */
+}
+@font-face {
+    font-family: 'Aboreto';
+    src: url('fonts/Aboreto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.mensaje-bienvenida {
+    width: 100vw;
+    min-height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    padding: 40px 0 60px 0;
+}
+
+.mensaje-bienvenida p {
+    color: #fff;
+    font-family: 'Aboreto', 'Dancing Script', 'Segoe Script', 'Brush Script MT', cursive, serif;
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 30px;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    max-width: 700px;
+    font-weight: 400;
+    text-shadow: 0 2px 8px #000a;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #000;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #000;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow-x: hidden;
+}
+
+.portada-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    overflow: hidden;
+    position: relative;
+}
+.portada-container {
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.portada-img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+.portada-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.logo-superior {
+    position: absolute;
+    top: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40vw;
+    max-width: 350px;
+    min-width: 180px;
+    z-index: 2;
+    pointer-events: none;
+}
